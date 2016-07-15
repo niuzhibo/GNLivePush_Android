@@ -125,9 +125,7 @@ public class CameraActivity extends Activity {
                                 recording = true;
                             }
                             break;
-                        case GnPushConstants.GNVIDEO_OPEN_CAMERA_FAIL:
-                            gnPushLive.switchCamera();
-                            break;
+
                         default:
                             Toast.makeText(CameraActivity.this, content,
                                     Toast.LENGTH_SHORT).show();
@@ -300,7 +298,6 @@ public class CameraActivity extends Activity {
         @Override
         public void onStatus(int what, int arg1, int arg2, String msg) {
             // msg may be null
-            Log.d(TAG,what+"xiaoyuan");
             switch (what) {
                 case GnPushConstants.GNVIDEO_OPEN_STREAM_SUCC:
                     // 推流成功
@@ -338,10 +335,7 @@ public class CameraActivity extends Activity {
                             .sendToTarget();
                     break;
 
-                case GnPushConstants.GNVIDEO_OPEN_CAMERA_FAIL:
-//                    mHandler.obtainMessage(what, "renderer exception")
-//                            .sendToTarget();
-                    break;
+
 
                 default:
 
